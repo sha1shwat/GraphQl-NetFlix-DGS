@@ -1,0 +1,25 @@
+type QueryResolver {
+    allOrganization: [Organization]
+    # employeesWithFilter(filter: EmployeeFilter): [Employee]
+    organization(id: ID!): Organization!
+}
+
+
+
+type Employee {
+    id: Int!
+    firstName: String!
+    lastName: String!
+    position: String!
+    salary: Int
+    age: Int
+    department : Department
+    organization  : Organization
+
+}
+
+
+schema {
+    query: QueryResolver
+    mutation: MutationResolver
+}

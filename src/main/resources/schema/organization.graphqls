@@ -1,0 +1,21 @@
+type Organization{
+    id : String
+    # This is name of organization
+    name : String
+    employee : [Employee]
+    department : [Department]
+}
+
+input OrganizationFilter{
+    ids : [Int]
+}
+
+
+type MutationResolver {
+    newOrganization(organization: OrganizationInput!): Organization
+}
+
+input OrganizationInput{
+    id : String!
+    name : String!
+}
